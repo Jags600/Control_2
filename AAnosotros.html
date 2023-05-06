@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LPS</title>
+    <link rel="stylesheet" href="css/Style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="javascript.js"></script>
+  </head>
+  <body class="container" onload="cargarFooter()">
+  <header id="header">
+    <div id="menu-container"></div>
+  </header>
+
+    <p>
+        ¡Bienvenidos a nuestra tienda de mascotas!
+
+En nuestra pequeña empresa, nos apasionan los animales y nos enorgullece ofrecer productos y servicios de alta calidad para satisfacer las necesidades de sus mascotas.
+
+Desde la alimentación y el cuidado de la salud, hasta los juguetes y accesorios, nuestro objetivo es brindar a su mascota todo lo que necesita para una vida feliz y saludable.
+
+Ofrecemos una amplia gama de alimentos para mascotas de alta calidad, desde piensos de calidad superior hasta comida húmeda y golosinas. También contamos con productos especializados para mascotas con necesidades dietéticas específicas, como alimentos para animales con alergias o sensibilidades alimentarias.
+
+Además, nuestro equipo de expertos está siempre dispuesto a ayudarle con cualquier pregunta o preocupación que tenga acerca de la salud de su mascota. Nos aseguramos de ofrecer productos de alta calidad para el cuidado de la salud de su mascota, desde productos antiparasitarios hasta champús y productos de cuidado dental.
+
+Por último, nuestra tienda también ofrece una amplia variedad de juguetes y accesorios para satisfacer las necesidades de entretenimiento y comodidad de su mascota. Desde collares y arneses hasta juguetes para masticar y rascadores para gatos, tenemos todo lo que su mascota necesita para vivir una vida plena y feliz.
+
+En resumen, en nuestra tienda de mascotas ofrecemos una amplia variedad de productos y servicios de alta calidad para satisfacer todas las necesidades de su mascota. ¡Gracias por visitar nuestra página web y esperamos verle pronto en nuestra tienda!
+    </p>
+ 
+    <br><br><br><br><br>
+
+    <footer>
+      <div id="footer"></div>
+    </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script>
+      function cargarFooter() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'footer.html', true);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            document.getElementById('footer').innerHTML = xhr.responseText;
+          }
+        };
+        xhr.send();
+      }
+    </script>
+    
+    <script>
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          document.getElementById('menu-container').innerHTML = xhr.responseText;
+        }
+      };
+      xhr.open('GET', 'menu.html', true);
+      xhr.send();
+    </script>
+  </body>
+</html>
