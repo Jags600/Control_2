@@ -17,22 +17,21 @@
     <body class="container">
       <div class="row">
         <div class="col-md-6">
-          <label for="id">ID:</label>
-          <input type="text" id="id" name="id"><br><br>
-          <label for="categoria">Categoria:</label>
-          <input type="text" id="categoria" name="categoria"><br><br>
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre"><br><br>
-          <label for="descripcion">Descripcion:</label>
-          <input type="text" id="descripcion" name="descripcion"><br><br>
-          <label for="precio">Precio:</label>
-          <input type="text" id="precio" name="precio"><br><br>
-          <label for="descuento_subscriptor">Descuento subscriptor:</label>
-          <input type="text" id="descuento_subscriptor" name="descuento_subscriptor"><br><br>
-          <label for="descuento_oferta">Descuento por oferta:</label>
-          <input type="text" id="descuento_oferta" name="descuento_oferta"><br><br>
+          <label for="id" class="form-label">ID:</label>
+          <input type="text" id="id" name="id" class="form-control" required><br>
+          <label for="categoria" class="form-label">Categoria:</label>
+          <input type="text" id="categoria" name="categoria" class="form-control" required><br>
+          <label for="nombre" class="form-label">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" class="form-control" required><br>
+          <label for="descripcion" class="form-label">Descripcion:</label>
+          <input type="text" id="descripcion" name="descripcion" class="form-control" required><br>
+          <label for="precio" class="form-label">Precio:</label>
+          <input type="text" id="precio" name="precio" class="form-control" required pattern="^\d+(\.\d{1,2})?$"><br>
+          <label for="descuento_subscriptor" class="form-label">Descuento subscriptor:</label>
+          <input type="text" id="descuento_subscriptor" name="descuento_subscriptor" class="form-control" pattern="^\d+(\.\d{1,2})?$"><br>
+          <label for="descuento_oferta" class="form-label">Descuento por oferta:</label>
+          <input type="text" id="descuento_oferta" name="descuento_oferta" class="form-control" pattern="^\d+(\.\d{1,2})?$"><br>
         </div>
-      
         <div class="col-md-6">
           <div class="row">
             <div class="col-md-6">
@@ -41,7 +40,7 @@
             <div class="col-md-12">
               <div class="container">
                 <div class="row">
-                  <div class="col-md-6 ">
+                  <div class="col-md-6">
                     <div class="button-container">
                       <button class="btn btn-primary">Examinar</button>
                     </div>
@@ -52,6 +51,7 @@
           </div>
         </div>
       </div>
+      
       <div class="row">
         <div class="col-md-6">
           <div class="button-container">

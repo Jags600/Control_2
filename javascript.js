@@ -25,12 +25,6 @@ window.onload = function() {
 	cargarFooter();
 };
 
-
-//validar form
-$(document).ready(function() {
-	$("form").validate();
-  });
-
   //validar rut
   function validarRut(rut) {
 	if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test(rut))
@@ -50,7 +44,7 @@ $(document).ready(function() {
 	  S = (S + T % 10 * (9 - M++ % 6)) % 11;
 	return S ? S - 1 : 'k';
   }
-  
+  //ultimo validar rut
   var rut = "12345678-9";
 if (validarRut(rut)) {
   console.log("El RUT es válido");
