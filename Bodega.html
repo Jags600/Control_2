@@ -12,34 +12,32 @@
   <header id="header">
     <div id="menu-container"></div>
   </header>
-    <div class="container mt-12">
-      <h1>Mantenedor de bodega</h1>
-      <div class="row">
-        <div class="col-6">          
-          <label for="Categoria">Categoria:</label>   
-          <select id="Categoria" name="Categoria">
-            <option value="Categoria1">Perros</option>
-            <option value="Categoria2">Gatos</option> 
-            <option value="Categoria3">Otros</option>
-          </select>
-          <br><br>
-          <label for="Nombre">Nombre:</label>   
-          <select id="Nombre" name="Nombre">
-            <option value="Nombre1">Saco alimento Royan Canin</option>
-            <option value="Nombre2">Saco alimento don cuchillo</option> 
-          </select>
-          <br><br>
-          <label for="searchbar">Cantidad :</label>   
-          <input type="text" id="searchbar" name="searchbar">
-          <br><br>
-          <button type="button" class="btn btn-secondary">Nuevo</button>
-          <button type="button" class="btn btn-primary">Agregar</button>
-        </div> 
-        <div class="col-4">
-          <img src="images/comida de perro.jpg" class="img-fluid img-border">
-        </div>
+  <div class="container mt-12">
+    <h1 class="mb-4">Mantenedor de bodega</h1>
+    <div class="row">
+      <div class="col-md-6">          
+        <label for="Categoria" class="form-label">Categoria:</label>   
+        <select id="Categoria" name="Categoria" class="form-select mb-3">
+          <option value="Categoria1">Perros</option>
+          <option value="Categoria2">Gatos</option> 
+          <option value="Categoria3">Otros</option>
+        </select>
+        <label for="Nombre" class="form-label">Nombre:</label>   
+        <select id="Nombre" name="Nombre" class="form-select mb-3">
+          <option value="Nombre1">Saco alimento Royan Canin</option>
+          <option value="Nombre2">Saco alimento don cuchillo</option> 
+        </select>
+        <label for="cantidad" class="form-label">Cantidad:</label>   
+        <input type="text" id="cantidad" name="cantidad" required pattern="\d+" class="form-control mb-3">
+        <button type="button" class="btn btn-secondary me-2">Nuevo</button>
+        <button type="button" class="btn btn-primary">Agregar</button>
+      </div> 
+      <div class="col-md-4">
+        <img src="images/comida de perro.jpg" class="img-fluid rounded">
       </div>
     </div>
+  </div>
+  
     
             <div class="container mt-12">
               <table class="table">
