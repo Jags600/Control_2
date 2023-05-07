@@ -14,8 +14,7 @@
   </header>
 <div>
     <h3>¡Concursa por una prenda de vestir!<br> Por compras superiores a $20.000 en productos ya estas participando!</h3>
-</div>
-<div class="container mt-12">
+</div><div class="container mt-12">
   <table class="table" id="tabla-productos">
     <tbody></tbody>
   </table>
@@ -46,6 +45,7 @@
             <img src="${producto.image}" class="card-img-top" alt="${producto.title}">
             <div class="card-body">
               <p class="card-text">${producto.price}<br>${producto.title}<br>${producto.description}</p>
+              <button class="btn btn-primary">Añadir a carro</button>
             </div>
           </div>
         `;
@@ -58,6 +58,7 @@
     }
   }
 </script>
+
 
 
 
