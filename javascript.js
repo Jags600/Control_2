@@ -53,14 +53,27 @@ if (validarRut(rut)) {
 }
 
 
-fetch('https://fakestoreapi.com/products/category/ropa')
+
+
+// Fetch para el api
+fetch('https://fakestoreapi.com/products')
   .then(response => response.json())
   .then(data => {
-    console.log(data);
-  })
-  .catch(error => {
-    console.error('Error al obtener los datos:', error);
+    // Recorre la lista de productos y agrega cada uno al div product-list
+    const productListDiv = document.getElementById('product-list');
+    data.forEach(product => {
+      const productDiv = document.createElement('div');
+      productDiv.innerHTML = `
+        <div class="card mb-4">
+          <div class="text-center"><img src="${product.image}" class="card-img-top" alt="${product.title}"></div>
+          <div class="card-body">
+            <p class="card-text">$${product.price}<br>${product.title}</p>
+            <button type="button" class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      `;
+      productListDiv.appendChild(productDiv);
+    });
   });
-
 
 
