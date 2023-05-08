@@ -38,61 +38,62 @@
     </div>
   </div>
   
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <meta charset="UTF-8" />
-      <title>Tabla de productos</title>
-    </head>
-    <body>
-      <div class="container mt-12">
-        <table class="table" id="tabla-productos">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Categoría</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Precio</th>
-              <th scope="col">Descripción</th>
-              <th scope="col">Imagen</th>
-              <th scope="col">Rating</th>
-              <th scope="col">Opciones</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-  
-      <script>
-        const tabla = document.getElementById("tabla-productos");
-  
-        fetch("https://fakestoreapi.com/products")
-          .then((response) => response.json())
-          .then((data) => agregarFilas(data));
-  
-        function agregarFilas(data) {
-          const tbody = tabla.querySelector("tbody");
-  
-          data.forEach((producto) => {
-            const fila = document.createElement("tr");
-            const columnas = `
-              <td>${producto.id}</td>
-              <td>${producto.category}</td>
-              <td>${producto.title}</td>
-              <td>${producto.price}</td>
-              <td>${producto.description}</td>
-              <td><img src="${producto.image}" alt="${producto.title}" width="50"></td>
-              <td>${producto.rating.rate}</td>
-              <td><button class="btn btn-danger">Eliminar</button></td>
-            `;
-            fila.innerHTML = columnas;
-            tbody.appendChild(fila);
-          });
-        }
-      </script>
-    </body>
-  </html>
-  
+    
+            <div class="container mt-12">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Opciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Perros</td>
+                    <td>Saco alimento Royan Canin</td>
+                    <th scope="col">Vendido</th>
+                    <th>
+                      <button class="btn btn-danger">Eliminar</button>
+                    </th>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Gato</td>
+                    <td>Saco alimento don cuchillo</td>
+                    <th scope="col">En bodega</th>
+                    <th>
+                      <button class="btn btn-danger">Eliminar</button>
+                    </th>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Perros</td>
+                    <td>Saco alimento Royan Canin</td>
+                    <th scope="col">Vendido</th>
+                    <th>
+                      <button class="btn btn-danger">Eliminar</button>
+                    </th>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Gato</td>
+                    <td>Saco alimento don cuchillo</td>
+                    <th scope="col">En bodega</th>
+                    <th>
+                      <button class="btn btn-danger">Eliminar</button>
+                    </th>
+                    
+                  </tr>
+                </tbody>
+              </table>
+    </div>
 
       <footer>
         <div id="footer"></div>
