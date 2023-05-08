@@ -71,14 +71,11 @@ function validarRut(rut) {
 	}
   }
   
-  
-
 
 // Fetch para el api
 fetch('https://fakestoreapi.com/products')
   .then(response => response.json())
   .then(data => {
-    // Recorre la lista de productos y agrega cada uno al div product-list
     const productListDiv = document.getElementById('product-list');
     data.forEach(product => {
       const productDiv = document.createElement('div');
