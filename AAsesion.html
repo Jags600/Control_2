@@ -19,7 +19,7 @@
   <div class="container mt-4">
 		<h1 class="text-center mb-4">Iniciar Sesión</h1>
 
-		<form id="login-form">
+		<form id="inicio-sesion">
 			<div class="form-group">
 				<label for="correo">Correo electrónico</label>
 				<input type="email" class="form-control" id="correo" name="correo" required>
@@ -40,33 +40,6 @@
 			</div>
 		</form>
 	</div>
-  <script>
-		$(document).ready(function() {
-			$("#login-form").validate({
-				rules: {
-					correo: {
-						required: true,
-						email: true,
-            customEmail: /@gmail\.com$/
-					},
-					contraseña: {
-						required: true,
-						minlength: 6
-					}
-				},
-				messages: {
-					correo: {
-						required: "Por favor ingrese su correo electrónico",
-						email: "Por favor ingrese un correo electrónico válido"
-					},
-					contraseña: {
-						required: "Por favor ingrese su contraseña",
-						minlength: "Su contraseña debe tener al menos 6 caracteres"
-					}
-				}
-			});
-		});
-	</script>
   
 
 
