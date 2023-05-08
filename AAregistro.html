@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +25,8 @@
 
       <div class="form-group">
         <label for="rut">RUT:</label>
-        <input type="text" class="form-control" id="rut" name="rut">
+        <input type="text" class="form-control" id="rut" name="rut" required pattern="\d{1,2}\.\d{3}\.\d{3}-[\dkK]" title="Ingrese un RUT válido">
+        <div class="invalid-feedback">El RUT es requerido y debe tener un formato válido</div>
       </div>
 
       <div class="form-group">
@@ -49,7 +50,7 @@
 
       <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" id="subscription" name="subscription" value="yes">
-        <label class="form-check-label" for="subscription"> &nbsp Con subscripción: Deseo subscribirme con un aporte de $3000 mensuales a la fundación "Mascotas Felices" y obtener un 5% de descuento en mis futuras compras</label>
+        <label class="form-check-label" for="subscription"> &nbsp; Con subscripción: Deseo subscribirme con un aporte de $3000 mensuales a la fundación "Mascotas Felices" y obtener un 5% de descuento en mis futuras compras</label>
       </div>
       <br>
 
@@ -72,6 +73,16 @@
         <button class="btn btn-primary" type="submit">Registrarse</button>
       </div>
     </form>
+<script>
+  const formulario = document.getElementById('formulario');
+  formulario.addEventListener('submit', function(event) {
+    event.preventDefault();
+    if (formulario.checkValidity() === true) {
+      window.location.href = "AAinicio.html";
+    }
+    formulario.classList.add('was-validated');
+  });
+  </script>
 
 
 

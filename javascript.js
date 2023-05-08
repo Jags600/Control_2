@@ -25,34 +25,53 @@ window.onload = function() {
 	cargarFooter();
 };
 
-  //validar rut
-  function validarRut(rut) {
-	if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test(rut))
+function validarRut(rut) {
+	// Verificar el formato del RUT
+	if (!/^[0-9]+-[0-9kK]{1}$/.test(rut)) {
 	  return false;
-  
-	var tmp = rut.split('-');
-	var digv = tmp[1];
-	var rut = tmp[0];
-	if (digv == 'K') digv = 'k';
-  
-	return (dv(rut) == digv);
+	}
+	
+	// Extraer el dígito verificador y los números del RUT
+	var digits = rut.split("-");
+	var number = digits[0];
+	var verifier = digits[1];
+	
+	// Calcular el dígito verificador esperado
+	var expectedVerifier = calcularDigitoVerificador(number);
+	
+	// Comparar el dígito verificador esperado con el dígito verificador actual
+	return verifier.toLowerCase() === expectedVerifier.toLowerCase();
   }
-  //validar digito verificador
-  function dv(T) {
-	var M = 0, S = 1;
-	for (; T; T = Math.floor(T / 10))
-	  S = (S + T % 10 * (9 - M++ % 6)) % 11;
-	return S ? S - 1 : 'k';
+  
+  function calcularDigitoVerificador(rut) {
+	var sum = 0;
+	var multiplier = 2;
+	
+	// Sumar los productos de los dígitos por el multiplicador
+	for (var i = rut.length - 1; i >= 0; i--) {
+	  sum += parseInt(rut.charAt(i)) * multiplier;
+	  
+	  if (multiplier === 7) {
+		multiplier = 2;
+	  } else {
+		multiplier++;
+	  }
+	}
+	
+	// Calcular el dígito verificador a partir de la suma
+	var remainder = sum % 11;
+	var verifier = 11 - remainder;
+	
+	if (verifier === 11) {
+	  return "0";
+	} else if (verifier === 10) {
+	  return "k";
+	} else {
+	  return verifier.toString();
+	}
   }
-  //ultimo validar rut
-  var rut = "12345678-9";
-if (validarRut(rut)) {
-  console.log("El RUT es válido");
-} else {
-  console.log("El RUT es inválido");
-}
-
-
+  
+  
 
 
 // Fetch para el api
