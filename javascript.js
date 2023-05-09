@@ -1,12 +1,15 @@
 // menu
-var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function() {
-  if (xhr.readyState === 4 && xhr.status === 200) {
-	document.getElementById('menu-container').innerHTML = xhr.responseText;
-  }
-};
-xhr.open('GET', 'menu.html', true);
-xhr.send();
+function cargarMenu() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET','Menu.html',true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      document.getElementById('Menu').innerHTML = xhr.responseText;
+    }
+  };
+  xhr.send();
+}
+
 
 // footer
 function cargarFooter() {
@@ -23,7 +26,12 @@ function cargarFooter() {
 //para cargar footer
 window.onload = function() {
 	cargarFooter();
+  
 };
+window.onload=function(){
+  cargaMenu();
+};
+
 // objeto.metodo(json)
 
 $(document).ready(function() {
